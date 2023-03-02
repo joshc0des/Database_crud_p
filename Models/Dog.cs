@@ -12,11 +12,26 @@ namespace Database_crud_p.Models
             DogToys = new HashSet<DogToy>();
         }
 
+        public Dog(DogInput dog) : this()
+        {
+            //Commented out because of identity
+            //Id = dog.Id;
+            Name = dog.Name;
+            Breed = dog.Breed;
+            Image = dog.Image;
+            OwnerId = dog.OwnerId;
+        }
+
         public int Id { get; set; }
         public string Name { get; set; }
         public string Breed { get; set; }
         public string Image { get; set; }
         public int? OwnerId { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Name} : {Breed} owned by {OwnerId}";
+        }
 
         public virtual Owner Owner { get; set; }
         public virtual ICollection<DogToy> DogToys { get; set; }

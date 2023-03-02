@@ -12,10 +12,28 @@ namespace Database_crud_p.Models
             DogToys = new HashSet<DogToy>();
         }
 
+        public Toy(ToyInput t) : this()
+        {
+            Name = t.Name;
+            Image = t.Image;
+            if (t.HasSqueeker.ToLower()[0] == 'y')
+            {
+                HasSqueeker = true;
+            } else
+            {
+                HasSqueeker = false;
+            }
+        }
+
         public int Id { get; set; }
         public string Name { get; set; }
         public string Image { get; set; }
         public bool HasSqueeker { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
 
         public virtual ICollection<DogToy> DogToys { get; set; }
     }

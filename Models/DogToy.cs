@@ -13,5 +13,10 @@ namespace Database_crud_p.Models
 
         public virtual Dog Dog { get; set; }
         public virtual Toy Toy { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Dog.Name}({Dog.Id}) owns {Toy.Name}";
+        }
     }
 }
