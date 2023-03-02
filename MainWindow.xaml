@@ -6,19 +6,20 @@
         xmlns:local="clr-namespace:Database_crud_p"
         mc:Ignorable="d"
         Title="CreateReadUpdateDelete Application" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FF9CD9F8">
         <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="50,387,0,0" VerticalAlignment="Top" Height="21" Width="120" Click="btnStart_Click"/>
-        <ListBox x:Name="lstBoxDogToys" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="591,48,9,169"/>
-        <ListBox x:Name="lstBoxToys" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="11,48,589,169" SelectionChanged="lstBoxToys_SelectionChanged"/>
-        <ListBox x:Name="lstBoxDogs" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="301,48,299,169" SelectionChanged="lstBoxDogs_SelectionChanged"/>
-        <Label Content="Toys:" HorizontalAlignment="Left" Margin="67,10,0,0" VerticalAlignment="Top" Height="33" Width="88" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18"/>
-        <Label Content="Dogs:" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="33" Width="88" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18"/>
-        <Label Content="Dog Toys:" HorizontalAlignment="Left" Margin="647,10,0,0" VerticalAlignment="Top" Height="33" Width="88" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18"/>
+        <ListBox x:Name="lstBoxDogToys" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="590,33,10,184"/>
+        <ListBox x:Name="lstBoxToys" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,33,590,184" SelectionChanged="lstBoxToys_SelectionChanged"/>
+        <ListBox x:Name="lstBoxDogs" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="300,33,300,184" SelectionChanged="lstBoxDogs_SelectionChanged"/>
+        <Label Content="Toys:" HorizontalAlignment="Left" Margin="67,0,0,0" VerticalAlignment="Top" Height="33" Width="88" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14"/>
+        <Label Content="Dogs:" HorizontalAlignment="Center" VerticalAlignment="Top" Height="33" Width="88" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14"/>
+        <Label Content="Dog Toys:" HorizontalAlignment="Left" Margin="647,0,0,0" VerticalAlignment="Top" Height="33" Width="88" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14"/>
         <Image x:Name="imgDog" HorizontalAlignment="Left" Height="100" Margin="352,278,0,0" VerticalAlignment="Top" Width="100"/>
         <Image x:Name="imgToy" HorizontalAlignment="Left" Height="100" Margin="61,278,0,0" VerticalAlignment="Top" Width="100"/>
         <Button x:Name="btnConnect" Content="Give Toy to Dog" HorizontalAlignment="Center" Margin="0,387,0,0" VerticalAlignment="Top" Height="21" Width="120" Click="btnConnect_Click"/>
         <Button x:Name="btnDeleteDogToy" Content="Remove Toy from Dog" HorizontalAlignment="Left" Margin="631,387,0,0" VerticalAlignment="Top" Height="21" Width="136" Click="btnDeleteDogToy_Click"/>
         <Button x:Name="btnGiveToy" Content="Give Toy to Dog Friend" HorizontalAlignment="Left" Margin="631,345,0,0" VerticalAlignment="Top" Height="21" Width="136" Click="btnGiveToy_Click"/>
+        <Label x:Name="labelOwner" Content="" HorizontalAlignment="Center" Margin="0,243,0,0" VerticalAlignment="Top" Height="30" Width="182" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
     </Grid>
 </Window>

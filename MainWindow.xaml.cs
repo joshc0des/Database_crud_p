@@ -44,8 +44,9 @@ namespace Database_crud_p
 
             imgDog.Visibility = Visibility.Hidden;
             imgToy.Visibility = Visibility.Hidden;
+            labelOwner.Content = "";
 
-            foreach (var dog in db.Dogs)
+            foreach (var dog in db.Dogs.Include(x => x.Owner))
             {
                 lstBoxDogs.Items.Add(dog);
             }
@@ -75,6 +76,8 @@ namespace Database_crud_p
             if (selected == null) return;
             imgDog.Source = new BitmapImage(new Uri(selected.Image));
             imgDog.Visibility = Visibility.Visible;
+
+            labelOwner.Content = $"{selected.Name} is owned by {selected.Owner.Name}";
         }
 
         private void btnConnect_Click(object sender, RoutedEventArgs e)

@@ -14,7 +14,7 @@ namespace Database_crud_p.Models
 
         public Owner(OwnerInput owner)
         {
-            //Commented out because of identity
+            //Commented out because of identity - taken care of in the database itself
             //Id = owner.Id;
             Name = owner.Name;
             Image = owner.Image;
