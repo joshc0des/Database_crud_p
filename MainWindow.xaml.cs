@@ -127,5 +127,11 @@ namespace Database_crud_p
 
             DisplayDatabaseContent();
         }
+
+        private void btnAddToy_Click(object sender, RoutedEventArgs e)
+        {
+            ToyWindow toyWND = new ToyWindow();
+            toyWND.ShowDialog();
+        }
     }
 }

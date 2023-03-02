@@ -8,9 +8,9 @@
         Title="CreateReadUpdateDelete Application" Height="450" Width="800">
     <Grid Background="#FF9CD9F8">
         <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="50,387,0,0" VerticalAlignment="Top" Height="21" Width="120" Click="btnStart_Click"/>
-        <ListBox x:Name="lstBoxDogToys" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="590,33,10,184"/>
-        <ListBox x:Name="lstBoxToys" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,33,590,184" SelectionChanged="lstBoxToys_SelectionChanged"/>
-        <ListBox x:Name="lstBoxDogs" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="300,33,300,184" SelectionChanged="lstBoxDogs_SelectionChanged"/>
+        <ListBox x:Name="lstBoxDogToys" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="590,33,10,184" Background="{x:Null}"/>
+        <ListBox x:Name="lstBoxToys" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,33,590,184" SelectionChanged="lstBoxToys_SelectionChanged" Background="{x:Null}"/>
+        <ListBox x:Name="lstBoxDogs" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="300,33,300,184" SelectionChanged="lstBoxDogs_SelectionChanged" Background="{x:Null}"/>
         <Label Content="Toys:" HorizontalAlignment="Left" Margin="67,0,0,0" VerticalAlignment="Top" Height="33" Width="88" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14"/>
         <Label Content="Dogs:" HorizontalAlignment="Center" VerticalAlignment="Top" Height="33" Width="88" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14"/>
         <Label Content="Dog Toys:" HorizontalAlignment="Left" Margin="647,0,0,0" VerticalAlignment="Top" Height="33" Width="88" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14"/>
@@ -20,6 +20,7 @@
         <Button x:Name="btnDeleteDogToy" Content="Remove Toy from Dog" HorizontalAlignment="Left" Margin="631,387,0,0" VerticalAlignment="Top" Height="21" Width="136" Click="btnDeleteDogToy_Click"/>
         <Button x:Name="btnGiveToy" Content="Give Toy to Dog Friend" HorizontalAlignment="Left" Margin="631,345,0,0" VerticalAlignment="Top" Height="21" Width="136" Click="btnGiveToy_Click"/>
         <Label x:Name="labelOwner" Content="" HorizontalAlignment="Center" Margin="0,243,0,0" VerticalAlignment="Top" Height="30" Width="182" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="btnAddToy" Content="Add a Toy" HorizontalAlignment="Left" Margin="50,252,0,0" VerticalAlignment="Top" Height="21" Width="120" Click="btnAddToy_Click"/>
 
     </Grid>
 </Window>
