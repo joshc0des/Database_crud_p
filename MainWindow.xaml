@@ -17,7 +17,8 @@
         <Image x:Name="imgDog" HorizontalAlignment="Left" Height="100" Margin="352,278,0,0" VerticalAlignment="Top" Width="100"/>
         <Image x:Name="imgToy" HorizontalAlignment="Left" Height="100" Margin="61,278,0,0" VerticalAlignment="Top" Width="100"/>
         <Button x:Name="btnConnect" Content="Give Toy to Dog" HorizontalAlignment="Center" Margin="0,387,0,0" VerticalAlignment="Top" Height="21" Width="120" Click="btnConnect_Click"/>
-        <Button x:Name="btnDeleteDogToy" Content="Remove Toy from Dog" HorizontalAlignment="Left" Margin="631,387,0,0" VerticalAlignment="Top" Height="21" Width="120" Click="btnDeleteDogToy_Click"/>
+        <Button x:Name="btnDeleteDogToy" Content="Remove Toy from Dog" HorizontalAlignment="Left" Margin="631,387,0,0" VerticalAlignment="Top" Height="21" Width="136" Click="btnDeleteDogToy_Click"/>
+        <Button x:Name="btnGiveToy" Content="Give Toy to Dog Friend" HorizontalAlignment="Left" Margin="631,345,0,0" VerticalAlignment="Top" Height="21" Width="136" Click="btnGiveToy_Click"/>
 
     </Grid>
 </Window>

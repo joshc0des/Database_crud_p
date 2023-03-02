@@ -25,22 +25,14 @@ namespace Database_crud_p
     public partial class MainWindow : Window
     {
         SoonerCoContext db = new SoonerCoContext();
-        private bool ShouldLoadToys;
-        private bool ShouldLoadOwners;
-        private bool ShouldLoadDogs;
 
         public MainWindow()
         {
             InitializeComponent();
-            ShouldLoadToys = false;
         }
 
         private void btnStart_Click(object sender, RoutedEventArgs e)
         {
-            //LoadToys(ShouldLoadToys);
-            //LoadOwners(ShouldLoadOwners);
-            //LoadDogs(ShouldLoadDogs);
-
             DisplayDatabaseContent();
         }
 
@@ -68,67 +60,6 @@ namespace Database_crud_p
                 lstBoxDogToys.Items.Add(dogToy);
             }
         }
-
-        //private void DisplayOwners()
-        //{
-        //    foreach (var toy in db.Toys)
-        //    {
-        //        lstBoxData.Items.Add(toy);
-        //    }
-        //}
-
-        //private void DisplayToys()
-        //{
-        //    foreach (var toy in db.Toys)
-        //    {
-        //        lstBoxData.Items.Add(toy);
-        //    }
-        //}
-
-        //private void LoadToys(bool load)
-        //{
-        //    if (load == false) return;
-
-        //    string toyInputJson = File.ReadAllText("Toys.json");
-        //    var toys = JsonConvert.DeserializeObject<List<ToyInput>>(toyInputJson);
-
-        //    foreach (var toy in toys)
-        //    {
-        //        db.Toys.Add(new Toy(toy));
-        //    }
-
-        //    db.SaveChanges();
-        //}
-
-        //private void LoadDogs(bool load)
-        //{
-        //    if (load == false) return;
-
-        //    string dogInputJson = File.ReadAllText("Dogs.json");
-        //    var dogs = JsonConvert.DeserializeObject<List<DogInput>>(dogInputJson);
-
-        //    foreach (var dog in dogs)
-        //    {
-        //        db.Dogs.Add(new Dog(dog));
-        //    }
-
-        //    db.SaveChanges();
-        //}
-
-        //private void LoadOwners(bool load)
-        //{
-        //    if (load == false) return;
-
-        //    string ownerInputJson = File.ReadAllText("Owners.json");
-        //    var owners = JsonConvert.DeserializeObject<List<OwnerInput>>(ownerInputJson);
-
-        //    foreach (var owner in owners)
-        //    {
-        //        db.Owners.Add(new Owner(owner));
-        //    }
-
-        //    db.SaveChanges();
-        //}
 
         private void lstBoxToys_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -173,6 +104,22 @@ namespace Database_crud_p
             DogToy selectedDog = (DogToy)lstBoxDogToys.SelectedItem;
 
             db.DogToys.Remove(selectedDog);
+            db.SaveChanges();
+
+            DisplayDatabaseContent();
+        }
+
+        private void btnGiveToy_Click(object sender, RoutedEventArgs e)
+        {
+            DogToy selectedDogToy = (DogToy)lstBoxDogToys.SelectedItem;
+            Dog selectedDog = (Dog)lstBoxDogs.SelectedItem;
+
+            if (selectedDogToy is null || selectedDogToy is null) return;
+
+            var updatedToy = db.DogToys.Find(selectedDogToy.Id);
+            if (updatedToy is null) return;
+            updatedToy.DogId = selectedDog.Id;
+
             db.SaveChanges();
 
             DisplayDatabaseContent();
